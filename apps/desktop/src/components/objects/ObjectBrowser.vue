@@ -2465,7 +2465,7 @@ async function exportTableData(row: ObjectBrowserRow, format: "csv" | "xlsx" | "
             insertMode,
             insertDialect,
             splitMaxMb,
-            omitDatabaseQualifier: dropsSchemaQualifier(props.connection.db_type, settingsStore.editorSettings.generateSqlIncludeDatabaseName, props.catalog),
+            omitDatabaseQualifier: dropsSchemaQualifier(effectiveDatabaseType.value, settingsStore.editorSettings.generateSqlIncludeDatabaseName, props.catalog),
           }
         : {}),
       csvQuoteMode: settingsStore.editorSettings.csvQuoteMode,
